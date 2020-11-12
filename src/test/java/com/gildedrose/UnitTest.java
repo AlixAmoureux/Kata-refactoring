@@ -35,7 +35,7 @@ class UnitTest {
 
     @Test
     void isAgedBrieItemQualityIncreasing() {
-        Item[] items = { new Item("Aged Brie", 10, 25) };
+        Item[] items = { new Item(ItemName.AGED_BRIE, 10, 25) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(26, items[0].quality);
@@ -43,7 +43,7 @@ class UnitTest {
 
     @Test
     void isAgedBrieItemQualityAboveFifty() {
-        Item[] items = { new Item("Aged Brie", 10, 50) };
+        Item[] items = { new Item(ItemName.AGED_BRIE, 10, 50) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(50, items[0].quality);
@@ -51,7 +51,7 @@ class UnitTest {
 
     @Test
     void isSulfurasItemQualityChanging() {
-        Item[] items = { new Item("Sulfuras", 10, 80) };
+        Item[] items = { new Item(ItemName.SULFURAS, 10, 80) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(80, items[0].quality);
@@ -59,7 +59,7 @@ class UnitTest {
 
     @Test
     void isBackStagePassesItemQualityIncreasing() {
-        Item[] items = { new Item("Backstage passes", 15, 25) };
+        Item[] items = { new Item(ItemName.BACKSTAGE, 15, 25) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(26, items[0].quality);
@@ -67,7 +67,7 @@ class UnitTest {
 
     @Test
     void isBackStagePassesItemQualityIncreasingTwiceWithTenDaysLast() {
-        Item[] items = { new Item("Backstage passes", 10, 25) };
+        Item[] items = { new Item(ItemName.BACKSTAGE, 10, 25) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(27, items[0].quality);
@@ -75,7 +75,7 @@ class UnitTest {
 
     @Test
     void isBackStagePassesItemQualityIncreasingTwiceWithFiveDaysLast() {
-        Item[] items = { new Item("Backstage passes", 5, 25) };
+        Item[] items = { new Item(ItemName.BACKSTAGE, 5, 25) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(28, items[0].quality);
@@ -83,7 +83,7 @@ class UnitTest {
 
     @Test
     void isConjuredItemQualityDegradingTwice() {
-        Item[] items = { new Item("Conjured", 5, 25) };
+        Item[] items = { new Item(ItemName.CONJURED, 5, 25) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
